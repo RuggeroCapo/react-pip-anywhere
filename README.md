@@ -5,6 +5,8 @@ picture-in-picture window on every platform that can do one — with an honest,
 automatic fallback on the platforms that can't. One component, no per-browser
 branching in your app code.
 
+**[Live demo](https://ruggerocapo.github.io/react-pip-anywhere/)**
+
 ```bash
 npm install react-pip-anywhere
 ```

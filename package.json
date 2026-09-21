@@ -1,0 +1,82 @@
+{
+  "name": "react-pip-anywhere",
+  "version": "0.1.0",
+  "description": "Put any React component in picture-in-picture, with a canvas fallback for browsers that only have video PiP.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "picture-in-picture",
+    "pip",
+    "document-picture-in-picture",
+    "canvas",
+    "captureStream",
+    "android"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./canvas": {
+      "types": "./dist/canvas/index.d.ts",
+      "import": "./dist/canvas/index.js",
+      "require": "./dist/canvas/index.cjs"
+    },
+    "./satori": {
+      "types": "./dist/satori/index.d.ts",
+      "import": "./dist/satori/index.js",
+      "require": "./dist/satori/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit",
+    "test:browser": "vitest run --project browser",
+    "test:all": "vitest run",
+    "demo": "vite --config demo/vite.config.ts",
+    "demo:build": "vite build --config demo/vite.config.ts",
+    "prepublishOnly": "npm run typecheck && npm run test:all && npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "satori": ">=0.10"
+  },
+  "peerDependenciesMeta": {
+    "satori": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@fontsource/archivo": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/spline-sans-mono": "^5.3.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/browser": "^5.0.1",
+    "@vitest/browser-playwright": "^5.0.1",
+    "happy-dom": "^20.14.5",
+    "playwright": "^1.63.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "satori": "^0.33.4",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
+  }
+}
